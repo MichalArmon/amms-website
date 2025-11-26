@@ -28,8 +28,10 @@ export default function Home() {
             letterSpacing: { xs: "0.1rem", md: "0.2rem" },
             color: "#FF006E",
             mb: { xs: 1.5, md: 2 },
-            fontSize: { xs: "1.7rem", sm: "2.3rem", md: "2.8rem" }, // 🔹 גודל משתנה
+            fontSize: { xs: "1.7rem", sm: "2.3rem", md: "2.8rem" },
             lineHeight: 1.3,
+            textAlign: "center", // ✅ לוודא שגם בכותרת ממורכז
+            mx: "auto",
           }}
         >
           AMMS VISUALIZATION & ANIMATION
@@ -44,7 +46,10 @@ export default function Home() {
             color: "#555",
             letterSpacing: "0.05rem",
             fontWeight: 500,
-            px: { xs: 1, sm: 4, md: 0 },
+            textAlign: "center", // ✅ לוודא שממורכז גם בגוף
+            px: { xs: 2, sm: 4, md: 0 }, // ✅ רווח צדדים במובייל
+            mx: "auto",
+            maxWidth: { xs: "90%", sm: "80%", md: "70%" }, // ✅ למנוע הידבקות לשוליים
           }}
         >
           We, at Studio{" "}

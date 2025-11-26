@@ -69,10 +69,7 @@ export default function Footer() {
           </IconButton>
         </Stack>
 
-        <Typography
-          variant="body1"
-          sx={{ fontSize: "1rem", whiteSpace: "nowrap" }}
-        >
+        <Typography variant="body1" sx={{ fontSize: "1rem" }}>
           | To contact us: <strong>+972-502136623</strong> &nbsp; Email:{" "}
           <Link
             href="mailto:office@amms.co.il"
