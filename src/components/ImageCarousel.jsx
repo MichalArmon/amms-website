@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import { Box, IconButton } from "@mui/material";
+import { Box, IconButton, useMediaQuery } from "@mui/material";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,20 +14,16 @@ function NextArrow({ onClick }) {
       sx={{
         position: "absolute",
         top: "50%",
-        right: 100,
+        right: { xs: 20, sm: 40, md: 100 }, // 🔹 קרוב יותר במובייל
         transform: "translateY(-50%)",
         color: "#fff",
-
         "&:hover": { color: "primary.main" },
-        "&:focus": {
-          outline: "none",
-          boxShadow: "none",
-        },
-        "&:active": {},
+        "&:focus": { outline: "none", boxShadow: "none" },
         zIndex: 5,
+        fontSize: { xs: "medium", md: "large" },
       }}
     >
-      <ArrowForwardIos fontSize="large" />
+      <ArrowForwardIos fontSize="inherit" />
     </IconButton>
   );
 }
@@ -36,23 +32,21 @@ function PrevArrow({ onClick }) {
   return (
     <IconButton
       onClick={onClick}
+      disableRipple
+      disableFocusRipple
       sx={{
         position: "absolute",
         top: "50%",
-        left: 100,
+        left: { xs: 20, sm: 40, md: 100 }, // 🔹 קרוב יותר במובייל
         transform: "translateY(-50%)",
         color: "#fff",
-
         "&:hover": { color: "primary.main" },
-        "&:focus": {
-          outline: "none",
-          boxShadow: "none",
-        },
-        "&:active": {},
+        "&:focus": { outline: "none", boxShadow: "none" },
         zIndex: 5,
+        fontSize: { xs: "medium", md: "large" },
       }}
     >
-      <ArrowBackIosNew fontSize="large" />
+      <ArrowBackIosNew fontSize="inherit" />
     </IconButton>
   );
 }
@@ -81,6 +75,8 @@ export default function ImageCarousel() {
     "/carousel/NIGHT.jpg",
   ];
 
+  const isMobile = useMediaQuery("(max-width:900px)");
+
   return (
     <Box
       sx={{
@@ -88,20 +84,26 @@ export default function ImageCarousel() {
         left: 0,
         right: 0,
         width: "100vw",
-        height: "90vh",
+        height: isMobile ? "70vh" : "90vh", // 🔹 גובה קטן יותר למובייל
         overflow: "hidden",
         mt: "70px", // אם ה-navbar שלך fixed
       }}
     >
       <Slider {...settings}>
         {images.map((img, index) => (
-          <Box key={index} sx={{ width: "100vw", height: "90vh" }}>
+          <Box
+            key={index}
+            sx={{
+              width: "100vw",
+              height: isMobile ? "70vh" : "90vh",
+            }}
+          >
             <img
               src={img}
               alt={`slide-${index}`}
               style={{
-                width: "100vw",
-                height: "90vh",
+                width: "100%",
+                height: "100%",
                 objectFit: "cover",
                 display: "block",
               }}

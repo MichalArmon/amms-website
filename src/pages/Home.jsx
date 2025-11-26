@@ -10,39 +10,51 @@ export default function Home() {
   return (
     <>
       <ImageCarousel />
+
       <Box
         textAlign="center"
         sx={{
-          py: 6,
-          px: 2,
+          py: { xs: 4, md: 6 },
+          px: { xs: 2, md: 2 },
           maxWidth: 1200,
           mx: "auto",
         }}
       >
+        {/* 🔹 כותרת ראשית */}
         <Typography
           variant="h2"
           sx={{
             fontWeight: 600,
-            letterSpacing: "0.2rem",
-            color: "#FF006E", // ורוד פוקסיה כמו בתמונה
-            mb: 2,
+            letterSpacing: { xs: "0.1rem", md: "0.2rem" },
+            color: "#FF006E",
+            mb: { xs: 1.5, md: 2 },
+            fontSize: { xs: "1.7rem", sm: "2.3rem", md: "2.8rem" }, // 🔹 גודל משתנה
+            lineHeight: 1.3,
           }}
         >
           AMMS VISUALIZATION & ANIMATION
         </Typography>
 
+        {/* 🔹 טקסט הסבר */}
         <Typography
           variant="body1"
           sx={{
-            fontSize: "1.1rem",
-            lineHeight: 2,
+            fontSize: { xs: "0.95rem", sm: "1.05rem", md: "1.1rem" },
+            lineHeight: { xs: 1.8, md: 2 },
             color: "#555",
             letterSpacing: "0.05rem",
-            fontWeight: 600,
+            fontWeight: 500,
+            px: { xs: 1, sm: 4, md: 0 },
           }}
         >
           We, at Studio{" "}
-          <Box component="span" sx={{ color: "#FF006E", fontWeight: 600 }}>
+          <Box
+            component="span"
+            sx={{
+              color: "#FF006E",
+              fontWeight: 600,
+            }}
+          >
             AMMS
           </Box>
           , specialize in 3D modeling, rendering, and architectural
@@ -50,6 +62,7 @@ export default function Home() {
           through tailored guidance and conceptual consolidation.
         </Typography>
       </Box>
+
       <ServicesSection />
       <ClientsSection />
       <IdentitySection />
