@@ -19,12 +19,14 @@ export default function IdentitySection() {
 
           width: "100%",
           height: "100%",
-          backgroundImage: `url("/about/ABOUT.png")`,
-          backgroundSize: "cover",
-          backgroundPosition: {
-            xs: "20% center", // במובייל רואים יותר את צד ימין של התמונה
-            md: "center", // בדסקטופ נשאר במרכז
+          backgroundImage: {
+            xs: `url("/about/ABOUT_M.jpg")`, // תמונה אחרת למובייל
+            md: `url("/about/ABOUT.png")`, // תמונה רגילה לדסקטופ
           },
+          backgroundSize: "cover",
+
+          backgroundPosition: "center",
+
           backgroundAttachment: "fixed",
           zIndex: 1,
           transition: "left 0.4s ease", // תנועה חלקה
