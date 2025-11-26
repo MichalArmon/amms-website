@@ -1,0 +1,10 @@
+ const images = [
+    "/carousel/Master-bedroom.jpg",
+    "/carousel/CHILDBEDROOM2.jpg",
+    "/carousel/BETHROOM.jpg",
+    "/carousel/Mugrabi_V2_F.jpg",
+    "/carousel/int-2.jpg",
+    "/carousel/EX-1.jpg",
+    "/carousel/EX_1_.jpg",
+    "/carousel/NIGHT.jpg",
+  ];
