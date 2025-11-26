@@ -16,14 +16,18 @@ export default function IdentitySection() {
         sx={{
           position: "absolute",
           top: 0,
-          left: 0,
+
           width: "100%",
           height: "100%",
-          backgroundImage: `url("/about/ABOUT.png")`, // עדכני את הנתיב לפי מיקום התמונה שלך
+          backgroundImage: `url("/about/ABOUT.png")`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed", // אפקט של "מודבק"
+          backgroundPosition: {
+            xs: "20% center", // במובייל רואים יותר את צד ימין של התמונה
+            md: "center", // בדסקטופ נשאר במרכז
+          },
+          backgroundAttachment: "fixed",
           zIndex: 1,
+          transition: "left 0.4s ease", // תנועה חלקה
         }}
       />
 
