@@ -1,0 +1,134 @@
+import * as React from "react";
+
+// 👈 מייבאים את רכיב PhotoAlbum במקום Box או Masonry
+
+import PhotoAlbum from "react-photo-album";
+
+import { Box } from "@mui/material";
+
+
+
+// ⚠️ הנתונים חייבים לכלול את הרוחב והגובה המקוריים של כל תמונה!
+
+// אלה נתונים לדוגמה בלבד.
+
+const photos = [
+
+  { src: "/projects/int1.jpg", width: 800, height: 600 },
+
+  { src: "/projects/ramat-aviv-03.jpg", width: 1200, height: 800 },
+
+  { src: "/projects/RABBI_HANNINA-9_02.jpg", width: 400, height: 600 },
+
+  { src: "/projects/INT_Kitchen22.jpg", width: 1000, height: 650 },
+
+  { src: "/projects/EXTR_MTCTY_HER83_VIEW_01.jpg", width: 1600, height: 900 },
+
+  { src: "/projects/BEDROOM_01no-logo.jpg", width: 700, height: 500 },
+
+  { src: "/projects/INT_80_40.jpg", width: 900, height: 1200 }, // תמונה אנכית
+
+  { src: "/projects/EXTR-02_60_40.jpg", width: 800, height: 533 },
+
+  { src: "/projects/EXTR-01-80_40-FC.jpg", width: 1400, height: 933 },
+
+  { src: "/projects/EXTR2_02.jpg", width: 600, height: 400 },
+
+  { src: "/projects/EXTR2_01_gv001.jpg", width: 1100, height: 733 },
+
+  { src: "/projects/F-R115-2-.jpg", width: 750, height: 500 },
+
+  { src: "/projects/TOR-FP.jpg", width: 1300, height: 866 },
+
+  { src: "/projects/UNI1.jpg", width: 500, height: 750 }, // תמונה אנכית
+
+  { src: "/projects/UNI2.jpg", width: 950, height: 633 },
+
+  { src: "/projects/INT_LivingroomNL.jpg", width: 1500, height: 1000 },
+
+  { src: "/projects/Hshok_1_2.jpg", width: 640, height: 480 },
+
+];
+
+
+
+export default function ProjectsGallery() {
+
+  return (
+
+    <Box
+
+      sx={{
+
+        px: { xs: 2, md: 4 },
+
+        py: 4,
+
+        backgroundColor: "#fafafa",
+
+      }}
+
+    >
+
+      {/* 👈 רכיב PhotoAlbum מבצע את כל החישובים */}
+
+      <PhotoAlbum
+
+        photos={photos}
+
+        layout="rows" // הפריסה הממלאת שורות
+
+        targetRowHeight={250} // 👈 הגובה הקבוע הרצוי לך (בפיקסלים)
+
+        spacing={16} // הרווח בין התמונות
+
+        // פונקציה מותאמת אישית לרינדור התמונה כדי להוסיף סגנונות כמו Hover ו-Border Radius
+
+        renderPhoto={({
+
+          photo,
+
+          imageProps: { alt, title, style, ...rest },
+
+        }) => (
+
+          <img
+
+            {...rest}
+
+            alt={alt}
+
+            title={title}
+
+            // סגנונות מ-MUI (הסגנונות של רוחב וגובה נקבעים ע"י הספרייה)
+
+            style={{
+
+              ...style,
+
+              borderRadius: 8,
+
+              boxShadow: "0px 3px 6px rgba(0,0,0,0.16)", // boxShadow: 3
+
+              transition: "transform 0.3s ease",
+
+              "&:hover": {
+
+                transform: "scale(1.02)",
+
+              },
+
+            }}
+
+          />
+
+        )}
+
+      />
+
+    </Box>
+
+  );
+
+}
+

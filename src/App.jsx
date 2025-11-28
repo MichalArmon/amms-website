@@ -14,6 +14,8 @@ import Exterior from "./pages/projects/Exterior";
 import Marketing from "./pages/projects/Marketing";
 import Graphics from "./pages/projects/Graphics";
 import Creative from "./pages/projects/Creative";
+import ProjectsGallery from "./components/ProjectsGallery";
+import ProjectsIndex from "./pages/ProjectsIndex";
 
 export default function App() {
   return (
@@ -25,6 +27,7 @@ export default function App() {
 
           {/* עמוד Projects עם תתי־דפים */}
           <Route path="projects" element={<Projects />}>
+            <Route index element={<ProjectsIndex />} /> {/* ברירת מחדל */}
             <Route path="interior" element={<Interior />} />
             <Route path="exterior" element={<Exterior />} />
             <Route path="marketing" element={<Marketing />} />

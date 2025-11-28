@@ -42,11 +42,13 @@ export default function Navbar() {
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
           {/* 🔹 לוגו */}
-          <img
-            src="/LOGO.svg"
-            alt="AMMS logo"
-            style={{ width: "180px", maxWidth: "40vw" }}
-          />
+          <Link to="/">
+            <img
+              src="/LOGO.svg"
+              alt="AMMS logo"
+              style={{ width: "180px", maxWidth: "40vw", cursor: "pointer" }}
+            />
+          </Link>
 
           {/* 🔹 תפריט למחשב */}
           <Stack
