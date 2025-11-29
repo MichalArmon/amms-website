@@ -18,6 +18,16 @@ export default function Home() {
           px: { xs: 2, md: 2 },
           maxWidth: 1200,
           mx: "auto",
+
+          // ✨ אפקט כניסה מלמטה
+          opacity: 0,
+          transform: "translateY(20px)",
+          animation: "fadeUp 0.8s ease-out forwards",
+
+          "@keyframes fadeUp": {
+            from: { opacity: 0, transform: "translateY(20px)" },
+            to: { opacity: 1, transform: "translateY(0)" },
+          },
         }}
       >
         {/* 🔹 כותרת ראשית */}
@@ -71,7 +81,6 @@ export default function Home() {
       <ServicesSection />
       <ClientsSection />
       <IdentitySection />
-      <Footer />
     </>
   );
 }

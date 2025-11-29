@@ -5,6 +5,15 @@ import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const images = [
+  "/carousel/Master-bedroom.jpg",
+  "/carousel/CHILDBEDROOM2.jpg",
+  "/carousel/BETHROOM.jpg",
+  "/carousel/int-2.jpg",
+  "/carousel/EX-1.jpg",
+  "/carousel/EX_1_.jpg",
+  "/carousel/NIGHT.jpg",
+];
 function NextArrow({ onClick }) {
   return (
     <IconButton
@@ -14,13 +23,13 @@ function NextArrow({ onClick }) {
       sx={{
         position: "absolute",
         top: "50%",
-        right: { xs: 20, sm: 40, md: 100 }, // 🔹 קרוב יותר במובייל
+        right: { xs: 20, sm: 40, md: 200 }, // 🔹 קרוב יותר במובייל
         transform: "translateY(-50%)",
         color: "#fff",
-        "&:hover": { color: "primary.main" },
+        "&:hover": { border: "1px solid" },
         "&:focus": { outline: "none", boxShadow: "none" },
         zIndex: 5,
-        fontSize: { xs: "medium", md: "large" },
+        fontSize: { xs: "medium", md: "2.4rem" },
       }}
     >
       <ArrowForwardIos fontSize="inherit" />
@@ -40,10 +49,12 @@ function PrevArrow({ onClick }) {
         left: { xs: 20, sm: 40, md: 100 }, // 🔹 קרוב יותר במובייל
         transform: "translateY(-50%)",
         color: "#fff",
-        "&:hover": { color: "primary.main" },
+        "&:hover": {
+          border: "1px solid",
+        },
         "&:focus": { outline: "none", boxShadow: "none" },
         zIndex: 5,
-        fontSize: { xs: "medium", md: "large" },
+        fontSize: { xs: "medium", md: "2.4rem" },
       }}
     >
       <ArrowBackIosNew fontSize="inherit" />
@@ -52,6 +63,8 @@ function PrevArrow({ onClick }) {
 }
 
 export default function ImageCarousel() {
+  const isMobile = useMediaQuery("(max-width:900px)");
+
   const settings = {
     dots: false,
     infinite: true,
@@ -65,46 +78,30 @@ export default function ImageCarousel() {
     prevArrow: <PrevArrow />,
   };
 
-  const images = [
-    "/carousel/Master-bedroom.jpg",
-    "/carousel/CHILDBEDROOM2.jpg",
-    "/carousel/BETHROOM.jpg",
-    "/carousel/int-2.jpg",
-    "/carousel/EX-1.jpg",
-    "/carousel/EX_1_.jpg",
-    "/carousel/NIGHT.jpg",
-  ];
-
-  const isMobile = useMediaQuery("(max-width:900px)");
+  // 🔥 הגבהים החדשים
+  const heroHeight = isMobile ? "45vh" : "65vh";
 
   return (
     <Box
       sx={{
         position: "relative",
-        left: 0,
-        right: 0,
         width: "100vw",
-        height: isMobile ? "70vh" : "90vh", // 🔹 גובה קטן יותר למובייל
+        height: heroHeight,
         overflow: "hidden",
-        mt: "70px", // אם ה-navbar שלך fixed
+        mt: "70px",
       }}
     >
       <Slider {...settings}>
         {images.map((img, index) => (
-          <Box
-            key={index}
-            sx={{
-              width: "100vw",
-              height: isMobile ? "70vh" : "90vh",
-            }}
-          >
+          <Box key={index} sx={{ width: "100%", height: heroHeight }}>
             <img
               src={img}
               alt={`slide-${index}`}
               style={{
                 width: "100%",
                 height: "100%",
-                objectFit: "cover",
+                objectFit: isMobile ? "contain" : "cover", // 🔥 הכי חשוב
+                objectPosition: "center",
                 display: "block",
               }}
             />

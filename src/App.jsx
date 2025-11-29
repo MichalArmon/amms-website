@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Layout from "./LayOut";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -8,16 +9,29 @@ import Animation from "./pages/Animation";
 import Clients from "./pages/Clients";
 import Contact from "./pages/Contact";
 
-// תתי־עמודים של Projects
 import Interior from "./pages/projects/Interior";
 import Exterior from "./pages/projects/Exterior";
 import Marketing from "./pages/projects/Marketing";
 import Graphics from "./pages/projects/Graphics";
 import Creative from "./pages/projects/Creative";
-import ProjectsGallery from "./components/ProjectsGallery";
 import ProjectsIndex from "./pages/ProjectsIndex";
 
+import LogoLoader from "./components/LogoLoader";
+
 export default function App() {
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    // זמן האנימציה שלך ב־ms
+    const t = setTimeout(() => {
+      setShowLoader(false);
+    }, 3000);
+
+    return () => clearTimeout(t);
+  }, []);
+
+  if (showLoader) return <LogoLoader />;
+
   return (
     <BrowserRouter>
       <Routes>
@@ -25,9 +39,8 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
 
-          {/* עמוד Projects עם תתי־דפים */}
           <Route path="projects" element={<Projects />}>
-            <Route index element={<ProjectsIndex />} /> {/* ברירת מחדל */}
+            <Route index element={<ProjectsIndex />} />
             <Route path="interior" element={<Interior />} />
             <Route path="exterior" element={<Exterior />} />
             <Route path="marketing" element={<Marketing />} />
