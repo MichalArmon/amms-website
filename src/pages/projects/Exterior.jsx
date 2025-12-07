@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function Exterior() {
   const exteriorGallery = [
     {
-      src: "/exterior/private-villa-holon-3d-exterior-rendering-spector-sinai-architect.png",
+      src: "/exterior/private-villa-holon-3d-exterior-rendering-spector-sinai-architect.jpg",
       col: 4,
       row: 3,
       alt: "High-quality 3D exterior rendering showcasing a private villa in Holon, Israel, designed by Spector–Sinai Architects. The visualization highlights the modern façade concept, combining wood and Corten steel materials, as well as the detailed design of the backyard pool area surrounded by a landscaped garden.",
@@ -54,7 +54,7 @@ export default function Exterior() {
     },
 
     {
-      src: "/exterior/azrieli-school-architecture-competition-lothan-architects-3d-night-rendering.jpg",
+      src: "/exterior/azrieli-school-architecture-competition-lothan-architects-3d-night-rendering.png",
       col: 4,
       row: 4,
       alt: "3D night rendering for the Azrieli School of Architecture competition by Lothan Architects at Tel Aviv University",
@@ -66,7 +66,7 @@ export default function Exterior() {
     },
 
     {
-      src: "/exterior/mograbi-square-tel-aviv-public-building-3d-exterior-rendering.png",
+      src: "/exterior/mograbi-square-tel-aviv-public-building-3d-exterior-rendering.jpg",
       col: 1,
       row: 1,
       alt: "3D exterior daylight rendering of a public building at Mograbi Square in Tel Aviv, designed by Spector–Sinai Architects",
@@ -78,7 +78,7 @@ export default function Exterior() {
     },
 
     {
-      src: "/exterior/mograbi-square-tel-aviv-architectural-3d-visualization-public-building.png",
+      src: "/exterior/mograbi-square-tel-aviv-architectural-3d-visualization-public-building.jpg",
       col: 2,
       row: 1,
       alt: "Architectural 3D visualization of a public building at Mograbi Square in Tel Aviv by Spector–Sinai Architects",

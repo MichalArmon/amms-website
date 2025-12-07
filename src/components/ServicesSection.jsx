@@ -2,35 +2,41 @@ import React from "react";
 import { Box, Typography, Divider, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const services = [
   {
     letter: "C",
     title: "CONSULT",
+    path: "/contact",
     description:
       "We at AMMS studio have a professional architects team working to make your VISION A REALITY. Providing impeccable service to create a perfect image FOR U!",
   },
   {
     letter: "G",
     title: "GRAPHICS",
+    path: "/projects/graphics",
     description:
       "High-end Marketing floor plans to illustrate your vision to the potential buyers.",
   },
   {
     letter: "A",
     title: "ANIMATION",
+    path: "/animation",
     description:
       "Architectural animation. Unlike an architectural rendering, which is a single image from a single point of view, it provides a more realistic way to show your vision to the client.",
   },
   {
     letter: "R",
     title: "RENDERING",
+    path: "/projects",
     description:
       "We at studio AMMS offer a wide range of 3D solutions. Photorealistic architectural rendering.",
   },
   {
     letter: "C",
     title: "CREATIVE",
+    path: "/projects/creative",
     description:
       "Illustrations from blueprints and 2D drawing post-production and verbal diagrams to explain the project and editing presentation sheets.",
   },
@@ -73,6 +79,7 @@ export default function ServicesSection() {
         >
           OUR SERVICES
         </Typography>
+
         <Divider
           sx={{
             width: "50px",
@@ -97,7 +104,7 @@ export default function ServicesSection() {
       >
         {services.map((service, index) => (
           <motion.div
-            key={index}
+            key={service.path}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -109,8 +116,10 @@ export default function ServicesSection() {
               textAlign: "center",
             }}
           >
-            {/* אות גדולה */}
+            {/* ✅ אות גדולה = לינק לנתיב המלא */}
             <Typography
+              component={Link}
+              to={service.path}
               sx={{
                 display: "block",
                 fontSize: { xs: "3.5rem", md: "5rem" },
@@ -120,6 +129,7 @@ export default function ServicesSection() {
                 mb: 1,
                 transition: "color 0.3s ease, transform 0.2s ease",
                 cursor: "pointer",
+                textDecoration: "none",
                 "&:hover": {
                   color: "#E91E63",
                   transform: "scale(1.08)",

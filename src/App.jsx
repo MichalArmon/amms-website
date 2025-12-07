@@ -17,6 +17,7 @@ import Creative from "./pages/projects/Creative";
 import ProjectsIndex from "./pages/ProjectsIndex";
 
 import LogoLoader from "./components/LogoLoader";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -34,6 +35,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
