@@ -45,6 +45,16 @@ export default function TestimonialCarousel() {
 
   const item = testimonials[index];
 
+  const arrowStyles = {
+    disableRipple: true,
+    disableFocusRipple: true,
+    sx: {
+      "& .MuiTouchRipple-root": { display: "none" },
+      "&:focus": { outline: "none", boxShadow: "none" },
+      "&:focus-visible": { outline: "none", boxShadow: "none" },
+    },
+  };
+
   return (
     <Box
       sx={{
@@ -56,11 +66,18 @@ export default function TestimonialCarousel() {
         maxWidth: "1300px",
         mx: "auto",
         px: 14,
-
         position: "relative",
+
+        // ✅ מובייל בלבד
+        "@media (max-width: 900px)": {
+          gridTemplateColumns: "1fr",
+          textAlign: "center",
+          px: 2,
+          py: 4,
+        },
       }}
     >
-      {/* חץ שמאל */}
+      {/* ✅ חץ שמאל – דסקטופ בלבד */}
       <IconButton
         onClick={prev}
         sx={{
@@ -68,18 +85,19 @@ export default function TestimonialCarousel() {
           left: 10,
           top: "50%",
           transform: "translateY(-50%)",
-          "&:focus": {
-            outline: "none",
-            boxShadow: "none",
-          },
-          "& .MuiTouchRipple-root": {
+
+          "@media (max-width: 900px)": {
             display: "none",
           },
+          "& .MuiTouchRipple-root": { display: "none" },
+          "&:focus": { outline: "none", boxShadow: "none" },
+          "&:focus-visible": { outline: "none", boxShadow: "none" },
         }}
       >
         <ArrowBackIosNewIcon fontSize="large" />
       </IconButton>
 
+      {/* ✅ תמונה */}
       <Box
         component="img"
         src={item.image}
@@ -89,17 +107,36 @@ export default function TestimonialCarousel() {
           height: "230px",
           objectFit: "contain",
           justifySelf: "center",
+
+          "@media (max-width: 900px)": {
+            width: "160px",
+            height: "160px",
+            mb: 2,
+          },
         }}
       />
 
-      {/* טקסט מימין */}
-      <Box sx={{ maxWidth: "800px" }}>
+      {/* ✅ טקסט */}
+      <Box
+        sx={{
+          maxWidth: "800px",
+          minHeight: "260px",
+
+          "@media (max-width: 900px)": {
+            maxWidth: "100%",
+          },
+        }}
+      >
         <Typography
           sx={{
             fontSize: "4rem",
             lineHeight: "0.5",
             color: "#FF007F",
             fontWeight: "bold",
+
+            "@media (max-width: 900px)": {
+              fontSize: "3rem",
+            },
           }}
         >
           "
@@ -112,6 +149,11 @@ export default function TestimonialCarousel() {
             color: "#444",
             whiteSpace: "pre-line",
             mb: 3,
+
+            "@media (max-width: 900px)": {
+              fontSize: "1rem",
+              px: 1,
+            },
           }}
         >
           {item.quote}
@@ -123,13 +165,17 @@ export default function TestimonialCarousel() {
             color: "#FF007F",
             fontWeight: "600",
             letterSpacing: "1px",
+
+            "@media (max-width: 900px)": {
+              fontSize: "1rem",
+            },
           }}
         >
           — {item.author}
         </Typography>
       </Box>
 
-      {/* חץ ימין */}
+      {/* ✅ חץ ימין – דסקטופ בלבד */}
       <IconButton
         onClick={next}
         sx={{
@@ -137,17 +183,39 @@ export default function TestimonialCarousel() {
           right: 0,
           top: "50%",
           transform: "translateY(-50%)",
-          "&:focus": {
-            outline: "none",
-            boxShadow: "none",
-          },
-          "& .MuiTouchRipple-root": {
+
+          "@media (max-width: 900px)": {
             display: "none",
           },
+          "& .MuiTouchRipple-root": { display: "none" },
+          "&:focus": { outline: "none", boxShadow: "none" },
+          "&:focus-visible": { outline: "none", boxShadow: "none" },
         }}
       >
         <ArrowForwardIosTwoToneIcon fontSize="large" />
       </IconButton>
+
+      {/* ✅ ✅ ✅ חצים ביחד – מובייל בלבד */}
+      <Box
+        sx={{
+          display: "none",
+
+          "@media (max-width: 900px)": {
+            display: "flex",
+            justifyContent: "center",
+            gap: 4,
+            mt: 3,
+          },
+        }}
+      >
+        <IconButton onClick={prev} {...arrowStyles}>
+          <ArrowBackIosNewIcon />
+        </IconButton>
+
+        <IconButton onClick={next} {...arrowStyles}>
+          <ArrowForwardIosTwoToneIcon />
+        </IconButton>
+      </Box>
     </Box>
   );
 }

@@ -79,7 +79,7 @@ export default function ImageCarousel() {
   };
 
   // 🔥 הגבהים החדשים
-  const heroHeight = isMobile ? "45vh" : "65vh";
+  const heroHeight = isMobile ? "45vh" : "60vh";
 
   return (
     <Box
@@ -88,19 +88,25 @@ export default function ImageCarousel() {
         width: "100vw",
         height: heroHeight,
         overflow: "hidden",
-        mt: "70px",
+        mt: { md: "70px", xs: "0" },
       }}
     >
       <Slider {...settings}>
         {images.map((img, index) => (
-          <Box key={index} sx={{ width: "100%", height: heroHeight }}>
+          <Box
+            key={index}
+            sx={{
+              width: "100%",
+              height: heroHeight,
+            }}
+          >
             <img
               src={img}
               alt={`slide-${index}`}
               style={{
                 width: "100%",
                 height: "100%",
-                objectFit: isMobile ? "contain" : "cover", // 🔥 הכי חשוב
+                objectFit: "cover", // ✅ חובה!
                 objectPosition: "center",
                 display: "block",
               }}

@@ -1,10 +1,24 @@
 import React from "react";
-import { Box, Typography, Divider } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Divider,
+  Tooltip,
+  useMediaQuery,
+} from "@mui/material";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
+
+// ICONS (רק למובייל)
+import ChairIcon from "@mui/icons-material/Chair";
+import ApartmentIcon from "@mui/icons-material/Apartment";
+import RealEstateAgentIcon from "@mui/icons-material/RealEstateAgent";
+import BrushIcon from "@mui/icons-material/Brush";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 
 export default function Projects() {
   const location = useLocation();
-  const path = location.pathname.toLowerCase(); // נורמליזציה למקרה של אותיות גדולות
+  const path = location.pathname.toLowerCase();
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   // 💡 כותרת דינמית לפי הנתיב
   let title = "OUR PROJECTS";
@@ -17,7 +31,6 @@ export default function Projects() {
     title = "OUR PROJECTS";
   }
 
-  // 💡 האות הראשונה בצבע ורוד
   const firstLetter = title.charAt(0);
   const rest = title.slice(1);
 
@@ -31,6 +44,7 @@ export default function Projects() {
           textAlign: "center",
           mb: 2,
           letterSpacing: "2px",
+          fontSize: { xs: "2rem", md: "3rem" },
         }}
       >
         <Box component="span" sx={{ color: "#FF007F" }}>
@@ -41,44 +55,88 @@ export default function Projects() {
 
       <Divider sx={{ mb: 3 }} />
 
-      {/* --- תפריט ניווט פנימי --- */}
+      {/* --- תפריט ניווט --- */}
       <Box
         sx={{
           display: "flex",
           justifyContent: "center",
-          gap: 4,
+          gap: { xs: 3, md: 4 },
           mb: 5,
           flexWrap: "wrap",
         }}
       >
-        <NavLinkItem to="Interior">INTERIOR RENDERINGS</NavLinkItem>
-        <NavLinkItem to="exterior">EXTERIOR RENDERINGS</NavLinkItem>
-        <NavLinkItem to="marketing">MARKETING & REAL ESTATE</NavLinkItem>
-        <NavLinkItem to="graphics">GRAPHICS</NavLinkItem>
-        <NavLinkItem to="creative">CREATIVE</NavLinkItem>
+        <NavLinkItem
+          to="interior"
+          label="INTERIOR RENDERINGS"
+          icon={<ChairIcon />}
+          isMobile={isMobile}
+        />
+
+        <NavLinkItem
+          to="exterior"
+          label="EXTERIOR RENDERINGS"
+          icon={<ApartmentIcon />}
+          isMobile={isMobile}
+        />
+
+        <NavLinkItem
+          to="marketing"
+          label="MARKETING & REAL ESTATE"
+          icon={<RealEstateAgentIcon />}
+          isMobile={isMobile}
+        />
+
+        <NavLinkItem
+          to="graphics"
+          label="GRAPHICS"
+          icon={<BrushIcon />}
+          isMobile={isMobile}
+        />
+
+        <NavLinkItem
+          to="creative"
+          label="CREATIVE"
+          icon={<AutoAwesomeIcon />}
+          isMobile={isMobile}
+        />
       </Box>
 
-      {/* --- כאן נטענים הדפים הפנימיים --- */}
+      {/* --- תוכן פנימי --- */}
       <Outlet />
     </Box>
   );
 }
 
-/* --------------- קומפוננטה קטנה לקישורים --------------- */
-function NavLinkItem({ to, children }) {
-  return (
+/* ---------------- ITEM רספונסיבי ---------------- */
+function NavLinkItem({ to, label, icon, isMobile }) {
+  const link = (
     <NavLink
-      to={to.toLowerCase()}
+      to={to}
       style={({ isActive }) => ({
         textDecoration: "none",
         fontWeight: isActive ? 700 : 500,
         color: isActive ? "#FF007F" : "#333",
-        borderBottom: isActive ? "2px solid #FF007F" : "2px solid transparent",
-        paddingBottom: "4px",
+        borderBottom:
+          isActive && !isMobile ? "2px solid #FF007F" : "2px solid transparent",
+        paddingBottom: isMobile ? "0px" : "6px",
         transition: "0.3s",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: isMobile ? "1.6rem" : "0.95rem",
       })}
     >
-      {children}
+      {/* ✅ במובייל – רק אייקון */}
+      {isMobile ? icon : label}
     </NavLink>
+  );
+
+  // ✅ Tooltip רק במובייל
+  return isMobile ? (
+    <Tooltip title={label} arrow placement="top">
+      <span>{link}</span>
+    </Tooltip>
+  ) : (
+    link
   );
 }

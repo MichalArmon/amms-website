@@ -6,8 +6,20 @@ export default function ProjectsGallery({ items, onImageClick }) {
     <Box
       sx={{
         display: "grid",
-        gridTemplateColumns: "repeat(7, 1fr)",
-        gridAutoRows: "160px",
+
+        // ✅ רספונסיביות אמיתית
+        gridTemplateColumns: {
+          xs: "repeat(1, 1fr)", // ✅ מובייל – 2 בשורה
+          sm: "repeat(3, 1fr)", // ✅ טאבלט – 3 בשורה
+          md: "repeat(7, 1fr)", // ✅ דסקטופ – המקור שלך
+        },
+
+        gridAutoRows: {
+          xs: "170px", // מובייל
+          sm: "180px", // טאבלט
+          md: "160px", // דסקטופ
+        },
+
         gap: 2,
       }}
     >
@@ -20,13 +32,27 @@ export default function ProjectsGallery({ items, onImageClick }) {
             overflow: "hidden",
             borderRadius: 2,
             cursor: "pointer",
-            gridColumn: `span ${img.col}`,
-            gridRow: `span ${img.row}`,
             boxShadow: 3,
+
+            // ✅ ביטול span במובייל
+            gridColumn: {
+              xs: "span 1",
+              sm: "span 1",
+              md: `span ${img.col}`,
+            },
+            gridRow: {
+              xs: "span 1",
+              sm: "span 1",
+              md: `span ${img.row}`,
+            },
 
             "&:hover img": {
               transform: "scale(1.05)",
               filter: "brightness(1.15)",
+            },
+
+            "&:hover .overlay": {
+              opacity: 1,
             },
           }}
         >
@@ -39,6 +65,7 @@ export default function ProjectsGallery({ items, onImageClick }) {
               height: "100%",
               objectFit: "cover",
               transition: "transform 0.6s ease, filter 0.4s ease",
+              display: "block",
             }}
           />
 
@@ -53,11 +80,13 @@ export default function ProjectsGallery({ items, onImageClick }) {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              textAlign: "center",
+              px: 2,
             }}
           >
             <Typography
               sx={{
-                fontSize: "1.4rem",
+                fontSize: { xs: "1rem", md: "1.4rem" },
                 fontWeight: 600,
                 color: "#333",
               }}

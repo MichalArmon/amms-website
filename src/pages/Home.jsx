@@ -14,7 +14,7 @@ export default function Home() {
       <Box
         textAlign="center"
         sx={{
-          py: { xs: 4, md: 6 },
+          py: { md: 6 },
           px: { xs: 2, md: 2 },
           maxWidth: 1200,
           mx: "auto",

@@ -15,13 +15,20 @@ export default function ClientsLogos() {
     <Box
       sx={{
         display: "grid",
-        gridTemplateColumns: { xs: "1fr 1fr", md: "1fr 1fr 1fr" },
+
+        // ✅ גריד רספונסיבי
+        gridTemplateColumns: {
+          xs: "1fr 1fr 1fr",
+          sm: "1fr 1fr 1fr",
+          md: "1fr 1fr 1fr",
+        },
+
         gap: 4,
-        maxWidth: "1200px",
-        minWidth: "1200px",
+
+        maxWidth: "1200px", // ✅ נשאר לדסקטופ
+        width: "100%", // ✅ מאפשר למובייל להתכווץ
         mx: "auto",
         mt: 6,
-
         px: 2,
       }}
     >
@@ -31,7 +38,12 @@ export default function ClientsLogos() {
           sx={{
             backgroundColor: "rgba(0, 0, 0, 0.03)",
             borderRadius: "8px",
-            height: "110px",
+
+            height: {
+              xs: "90px", // ✅ מובייל
+              md: "110px", // ✅ דסקטופ
+            },
+
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
