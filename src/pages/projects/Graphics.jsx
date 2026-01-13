@@ -6,36 +6,39 @@ import { useState } from "react";
 function Graphics() {
   const graphicsGallery = [
     {
-      src: "/graphics/TYP-N.jpg",
+      src: "/graphics/led-tzur-marketing-floor-plan-type-a.jpg",
       col: 2,
       row: 2,
-      alt: "Modern Interior",
-      architect: "VisualWorks Studio",
+      alt: "2D architectural marketing floor plan rendering of apartment type A, presenting residential layout, room distribution, and color-coded spaces with clear spatial hierarchy",
+      architect: "Led Tzur",
       year: "2021",
       location: "Israel",
-      description: "High-end graphic visualization for an interior study.",
+      description:
+        "2D architectural marketing floor plan rendering designed to present apartment type A with clarity and precision. The plan highlights the internal layout, room distribution, and functional zoning of the residential unit. Color-coded areas enhance readability and help communicate scale, proportions, and spatial relationships. Created for real estate marketing and architectural presentation, the floor plan allows clients and developers to quickly understand the apartment design in a visually engaging and accurate manner.",
     },
 
     {
-      src: "/graphics/TYP--B-.jpg",
+      src: "/graphics/led-tzur-marketing-floor-plan-type-b.jpg",
       col: 2,
       row: 2,
-      alt: "Rabbi Hanina Street",
+      alt: "2D architectural marketing floor plan rendering showing residential apartment layout, shared areas, balconies, and furniture arrangement in a clean and accurate graphic style",
       architect: "ConceptLine",
       year: "2020",
       location: "Israel",
-      description: "Architectural drawing showcasing early massing iterations.",
+      description:
+        "High-end 2D architectural marketing floor plan rendering designed to clearly showcase residential apartment layouts in a refined and professional visual language. The drawing presents private units, shared spaces, balconies, and furniture arrangements with a strong emphasis on architectural accuracy and spatial clarity. Created for marketing and presentation purposes, the floor plan allows developers, architects, and clients to easily understand the apartment distribution and functional flow. The graphic style combines detailed AutoCAD-based linework with clean composition and soft, elegant coloring, resulting in a precise, visually compelling architectural representation optimized for digital and print use.",
     },
 
     {
-      src: "/graphics/floor-plan.png",
+      src: "/graphics/marketing-floor-plan-render.png",
       col: 3,
       row: 2,
-      alt: "Luxury Kitchen",
+      alt: "2D architectural marketing floor plan rendering showing residential apartment layout, shared areas, balconies, and furniture arrangement in a clean and accurate graphic style",
       architect: "PlanLab",
       year: "2022",
       location: "USA",
-      description: "Detailed floor plan layout for a residential project.",
+      description:
+        "High-end 2D architectural marketing floor plan rendering designed to clearly showcase residential apartment layouts in a refined and professional visual language. The drawing presents private units, shared spaces, balconies, and furniture arrangements with a strong emphasis on architectural accuracy and spatial clarity. Created for marketing and presentation purposes, the floor plan allows developers, architects, and clients to easily understand the apartment distribution and functional flow. The graphic style combines detailed AutoCAD-based linework with clean composition and soft, elegant coloring, resulting in a precise, visually compelling architectural representation optimized for digital and print use.",
     },
 
     {
@@ -50,26 +53,27 @@ function Graphics() {
     },
 
     {
-      src: "/graphics/TYP-E.jpg",
+      src: "/graphics/led-tzur-marketing-floor-plan-type-c.jpg",
       col: 2,
       row: 2,
-      alt: "Modern Exterior",
-      architect: "GraphicBuild",
+      alt: "Architectural 2D floor plan marketing render of apartment type C, showing residential space planning, furniture layout, and color-based zoning for real estate presentation",
+      architect: "Led Tzur",
       year: "2020",
       location: "France",
-      description: "Graphic section exploring mass distribution and zoning.",
+      description:
+        "Architectural 2D floor plan marketing render presenting apartment type C with a focus on space planning and usability. The plan includes furniture layout and clearly defined zones, helping potential buyers understand room sizes and living flow. Developed for real estate marketing, this floor plan balances technical accuracy with a clean, approachable graphic style suitable for digital and print materials.",
     },
     {
-      src: "/graphics/TYP-B1.jpg",
+      src: "/graphics/led-tzur-marketing-floor-plan-type-d.jpg",
       col: 2,
       row: 2,
-      alt: "Exterior Concept",
-      architect: "DraftVision",
+      alt: "2D architectural marketing floor plan of apartment type D, emphasizing residential layout, functional zoning, and vivid color presentation for real estate marketing",
+      architect: "Led Tzur",
       year: "2019",
       location: "Germany",
-      description: "Diagrammatic typology illustrating façade variations.",
+      description:
+        "2D architectural marketing floor plan created to showcase apartment type D in a vivid and easy-to-read visual language. The rendering emphasizes functional zoning, spatial balance, and overall apartment organization. Through the use of color and precise linework, the floor plan supports effective real estate marketing by making complex architectural information accessible to clients, investors, and sales teams.",
     },
-
     {
       src: "/graphics/sem2.jpg",
       col: 4,
