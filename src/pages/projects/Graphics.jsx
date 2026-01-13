@@ -42,14 +42,15 @@ function Graphics() {
     },
 
     {
-      src: "/graphics/floor-plan.jpg",
+      src: "/graphics/residential-apartment-marketing-floor-plan-render..jpg",
       col: 3,
       row: 2,
-      alt: "Cozy Living Room",
+      alt: "2D architectural marketing floor plan rendering of a residential apartment showing detailed room layout, furniture arrangement, bathrooms, kitchen, living area, and outdoor terrace",
       architect: "PlanStudio",
       year: "2021",
       location: "Netherlands",
-      description: "Technical drawing of a multi-room residential concept.",
+      description:
+        "High-end 2D architectural marketing floor plan rendering of a residential apartment, designed to clearly present spatial layout and functional organization. The plan illustrates bedrooms, bathrooms, kitchen, dining and living areas, along with detailed furniture arrangements and an outdoor terrace. Emphasis is placed on clarity, proportions, and usability, allowing potential buyers and clients to easily understand the apartment’s flow and lifestyle qualities. The clean graphic style combines precise architectural linework with subtle shading and color accents, making the floor plan ideal for real estate marketing, sales presentations, and digital portfolios.",
     },
 
     {
@@ -75,25 +76,27 @@ function Graphics() {
         "2D architectural marketing floor plan created to showcase apartment type D in a vivid and easy-to-read visual language. The rendering emphasizes functional zoning, spatial balance, and overall apartment organization. Through the use of color and precise linework, the floor plan supports effective real estate marketing by making complex architectural information accessible to clients, investors, and sales teams.",
     },
     {
-      src: "/graphics/sem2.jpg",
+      src: "/graphics/conceptual-section-alternative-housing-urban.jpg",
       col: 4,
       row: 2,
-      alt: "Building Concept",
+      alt: "Conceptual architectural section illustrating alternative housing in an urban environment, combining theoretical design, spatial analysis, and architectural visualization techniques",
       architect: "SectionLab",
       year: "2022",
-      location: "UK",
-      description: "Rendered section cut showing spatial hierarchy.",
+      location: "Urban context",
+      description:
+        "Conceptual architectural section developed for a theoretical project exploring alternative housing models in the urban environment. The section demonstrates a design methodology that combines precise AutoCAD-based modeling with spatial definition, internal and natural lighting studies, and three-dimensional visualization. The representation integrates architectural section drawing, lighting analysis, 3D rendering, and graphic illustration to convey spatial depth, atmosphere, and conceptual intent. This project reflects an interdisciplinary approach to architectural thinking, merging technical accuracy with visual storytelling for academic research and conceptual architectural exploration.",
     },
 
     {
-      src: "/graphics/section-4.jpg",
+      src: "/graphics/architectural-section-theoretical-complex-building.jpg",
       col: 3,
       row: 2,
-      alt: "Urban Planning",
+      alt: "Architectural section of a complex building combining residential structure with an underground museum, illustrating spatial relationships and urban integration",
       architect: "UrbanDrafts",
       year: "2018",
-      location: "Italy",
-      description: "Architectural section illustrating city block relations.",
+      location: "Yarkon River Park | Tel Aviv, Israel",
+      description:
+        "Architectural section developed for a theoretical project presenting a complex building that integrates residential spaces with an underground museum. The section explores the relationship between above-ground living areas and subterranean public functions, emphasizing spatial hierarchy and circulation. Created for an urban context along the Yarkon River in Tel Aviv, the drawing combines precise AutoCAD-based modeling with photorealistic coloring and architectural detailing. The project highlights a layered architectural approach that merges housing, culture, and public space within a single complex structure.",
     },
 
     {
@@ -129,36 +132,39 @@ function Graphics() {
     },
 
     {
-      src: "/graphics/section-4.jpg",
+      src: "/graphics/architectural-section-complex-building-yarkon.jpg",
       col: 7,
       row: 3,
-      alt: "Large Architectural Render",
+      alt: "Conceptual architectural section of a complex urban building, featuring residential areas above an underground museum in a theoretical design context",
       architect: "SkylineGraphics",
       year: "2022",
-      location: "UAE",
-      description: "Large-scale sectional rendering of mixed-use building.",
+      location: "Tel Aviv | Israel",
+      description:
+        "Conceptual architectural section created as part of a theoretical design project, depicting a complex urban building composed of residential functions above an underground museum. The section focuses on architectural layering, interior-exterior relationships, and the integration of public and private programs. Generated from a detailed AutoCAD 2D file and enhanced with photorealistic coloring, the drawing communicates architectural intent, material depth, and spatial complexity. The project demonstrates an academic approach to urban architecture and mixed-use design representation.",
     },
 
     {
-      src: "/graphics/big_se2.jpg",
+      src: "/graphics/prospective-section-final-project-architecture..jpg",
       col: 3,
       row: 2,
-      alt: "Student Dorm Concept",
+      alt: "Prospective architectural section rendering of a final project, illustrating interior spaces, natural lighting, and layered architectural composition",
       architect: "EduDraft Studio",
-      year: "2019",
-      location: "Germany",
-      description: "Conceptual section of student housing building.",
+      year: "Final Project",
+      location: "Tel Aviv | Israel",
+      description:
+        "Prospective architectural section created as part of a final project, presenting a refined balance between interior spaces and natural lighting. The rendering emphasizes spatial depth, architectural layering, and the relationship between built form and light. Developed using vector-based workflows and high-level graphic filtering, the section delivers a clear and visually compelling representation suitable for architectural presentation, portfolio display, and academic evaluation.",
     },
 
     {
-      src: "/graphics/big_se.jpg",
+      src: "/graphics/prospective-section-final-project-rendering.jpg",
       col: 4,
       row: 2,
-      alt: "University Masterplan",
+      alt: "Architectural prospective section of a final project, combining precise rendering, interior-exterior relationships, and controlled natural lighting",
       architect: "CampusVision",
-      year: "2021",
-      location: "Netherlands",
-      description: "Masterplan section of large academic complex.",
+      year: "Final Project",
+      location: "Tel Aviv | Israel",
+      description:
+        "Architectural prospective section developed for a final academic project, focusing on accurate rendering techniques and spatial clarity. The section explores the interaction between interior architecture and natural lighting through controlled composition and precise detailing. Produced using vector layers and advanced filtering methods, the drawing reflects a high level of architectural resolution and serves as a comprehensive representation of design intent within a professional academic context.",
     },
   ];
   const [open, setOpen] = useState(false);
