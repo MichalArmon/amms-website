@@ -8,7 +8,7 @@ function Graphics() {
     {
       src: "/graphics/TYP-N.jpg",
       col: 2,
-      row: 3,
+      row: 2,
       alt: "Modern Interior",
       architect: "VisualWorks Studio",
       year: "2021",
@@ -19,7 +19,7 @@ function Graphics() {
     {
       src: "/graphics/TYP--B-.jpg",
       col: 2,
-      row: 3,
+      row: 2,
       alt: "Rabbi Hanina Street",
       architect: "ConceptLine",
       year: "2020",
@@ -30,7 +30,7 @@ function Graphics() {
     {
       src: "/graphics/floor-plan.png",
       col: 3,
-      row: 3,
+      row: 2,
       alt: "Luxury Kitchen",
       architect: "PlanLab",
       year: "2022",
@@ -39,20 +39,9 @@ function Graphics() {
     },
 
     {
-      src: "/graphics/TYP-B1.jpg",
-      col: 3,
-      row: 3,
-      alt: "Exterior Concept",
-      architect: "DraftVision",
-      year: "2019",
-      location: "Germany",
-      description: "Diagrammatic typology illustrating façade variations.",
-    },
-
-    {
       src: "/graphics/floor-plan.jpg",
-      col: 4,
-      row: 3,
+      col: 3,
+      row: 2,
       alt: "Cozy Living Room",
       architect: "PlanStudio",
       year: "2021",
@@ -62,19 +51,29 @@ function Graphics() {
 
     {
       src: "/graphics/TYP-E.jpg",
-      col: 3,
-      row: 3,
+      col: 2,
+      row: 2,
       alt: "Modern Exterior",
       architect: "GraphicBuild",
       year: "2020",
       location: "France",
       description: "Graphic section exploring mass distribution and zoning.",
     },
+    {
+      src: "/graphics/TYP-B1.jpg",
+      col: 2,
+      row: 2,
+      alt: "Exterior Concept",
+      architect: "DraftVision",
+      year: "2019",
+      location: "Germany",
+      description: "Diagrammatic typology illustrating façade variations.",
+    },
 
     {
       src: "/graphics/sem2.jpg",
       col: 4,
-      row: 3,
+      row: 2,
       alt: "Building Concept",
       architect: "SectionLab",
       year: "2022",
@@ -85,7 +84,7 @@ function Graphics() {
     {
       src: "/graphics/section-4.jpg",
       col: 3,
-      row: 3,
+      row: 2,
       alt: "Urban Planning",
       architect: "UrbanDrafts",
       year: "2018",
@@ -96,7 +95,7 @@ function Graphics() {
     {
       src: "/graphics/sem3.jpg",
       col: 2,
-      row: 3,
+      row: 2,
       alt: "Residential Block",
       architect: "LineSketch Studio",
       year: "2021",
@@ -107,7 +106,17 @@ function Graphics() {
     {
       src: "/graphics/SECTION-MUSEUM.jpg",
       col: 2,
-      row: 3,
+      row: 2,
+      alt: "Facade Study",
+      architect: "MuseumLab",
+      year: "2020",
+      location: "Israel",
+      description: "Museum section illustrating structural and spatial flow.",
+    },
+    {
+      src: "/graphics/plang.jpg",
+      col: 3,
+      row: 2,
       alt: "Facade Study",
       architect: "MuseumLab",
       year: "2020",
@@ -118,7 +127,7 @@ function Graphics() {
     {
       src: "/graphics/section-4.jpg",
       col: 7,
-      row: 4,
+      row: 3,
       alt: "Large Architectural Render",
       architect: "SkylineGraphics",
       year: "2022",
@@ -129,7 +138,7 @@ function Graphics() {
     {
       src: "/graphics/big_se2.jpg",
       col: 3,
-      row: 3,
+      row: 2,
       alt: "Student Dorm Concept",
       architect: "EduDraft Studio",
       year: "2019",
@@ -140,7 +149,7 @@ function Graphics() {
     {
       src: "/graphics/big_se.jpg",
       col: 4,
-      row: 3,
+      row: 2,
       alt: "University Masterplan",
       architect: "CampusVision",
       year: "2021",
