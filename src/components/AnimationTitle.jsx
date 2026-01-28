@@ -4,7 +4,7 @@ import { Box, Typography, keyframes, Divider } from "@mui/material";
 // אנימציה: הופעה משמאל + Fade in
 const slideIn = keyframes`
   0% {
-    opacity: 0;
+    opacity: 0.5;
     transform: translateX(-40px);
   }
   100% {
