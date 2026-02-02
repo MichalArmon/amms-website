@@ -8,6 +8,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CloseIcon from "@mui/icons-material/Close";
 import ChatIcon from "@mui/icons-material/Chat";
+import { Link } from "react-router-dom";
 
 export default function FloatingSocialBar() {
   const isMobile = useMediaQuery("(max-width:900px)");
@@ -24,7 +25,7 @@ export default function FloatingSocialBar() {
       link: "https://www.linkedin.com/in/shira-martziano-971481114",
     },
     { icon: <InstagramIcon />, link: "https://www.instagram.com/studio_amms/" },
-    { icon: <EmailIcon />, link: "office@amms.co.il" },
+
     {
       icon: <WhatsAppIcon />,
       link: "https://api.whatsapp.com/send?phone=97233752011",
@@ -94,6 +95,30 @@ export default function FloatingSocialBar() {
             {item.icon}
           </IconButton>
         ))}
+      <IconButton
+        component={Link}
+        to={"/contact"}
+        sx={{
+          width: 70,
+          height: 70,
+          borderRadius: "50%",
+          backgroundColor: "#BDBDBD",
+          color: "white",
+          transition: "all 0.3s ease",
+          boxShadow: 2,
+
+          "&:hover": {
+            transform: "scale(0.9)",
+            boxShadow: 4,
+          },
+
+          "& svg": {
+            fontSize: "2.2rem",
+          },
+        }}
+      >
+        <EmailIcon />
+      </IconButton>
 
       {/* ✅ כפתור סגירה */}
       {isMobile && open && (
