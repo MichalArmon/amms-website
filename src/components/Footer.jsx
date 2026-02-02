@@ -75,7 +75,7 @@ export default function Footer() {
             href="mailto:office@amms.co.il"
             sx={{ color: "inherit", textDecoration: "none", fontWeight: 600 }}
           >
-            OFFICE@AMMS.CO.IL
+            studiovis.am.ms@gmail.com
           </Link>
         </Typography>
       </Stack>

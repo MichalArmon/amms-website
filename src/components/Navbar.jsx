@@ -53,7 +53,7 @@ export default function Navbar() {
           {/* 🔹 תפריט למחשב */}
           <Stack
             direction="row"
-            spacing={4}
+            spacing={2}
             sx={{
               display: { xs: "none", md: "flex" },
             }}
@@ -70,7 +70,7 @@ export default function Navbar() {
                     color: isActive ? theme.palette.primary.main : "#222",
                     fontWeight: isActive ? 700 : 500,
                     letterSpacing: isActive ? 0 : 0.5,
-                    fontSize: "0.9rem",
+                    fontSize: "0.8rem",
                     borderBottom: isActive
                       ? `2px solid ${theme.palette.primary.main}`
                       : "2px solid transparent",
